@@ -4,3 +4,6 @@ excel_first = pyautogui.locateOnScreen('excelfirst.png', confidence=0.7) # 인�
 print(excel_first)
 if (excel_first == None):
     print("음슴")
+
+a = pyautogui.position()
+print(a.x)

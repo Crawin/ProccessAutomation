@@ -125,12 +125,15 @@ def activate():
     N.insert(0, new_N)
         
 def run(event):
+    prev_mouse = pyautogui.position()
+    prev_mouse = [prev_mouse.x, prev_mouse.y]
     if goal_id['state'] == 'disabled':
         activate()
     else:
         while int(goal_id.get()) >= int(questid.get()):
             activate()
             up()
+    pyautogui.moveTo(prev_mouse[0],prev_mouse[1])
 
 def up():
     new_questid = str(int(questid.get())+1)
