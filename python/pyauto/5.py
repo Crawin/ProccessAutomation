@@ -12,10 +12,10 @@ import threading
 
 # everything = (3083,1413)
 # excel = (3392,1415)
-excel_first = (2698,456)
+# excel_first = (2698,456)
 everything = pyautogui.locateOnScreen('everything.png', confidence=0.9)
 excel = pyautogui.locateOnScreen('excel.png', confidence=0.7)
-# excel_first = pyautogui.locateOnScreen('excelfirst.png', confidence=0.7) # 인식이 안됨
+excel_first = pyautogui.locateOnScreen('excelfirst.png', confidence=0.7) # 인식이 안됨
 
 def check_input_esc():
     while True:
@@ -52,8 +52,11 @@ def paste_excel(list_code, list_desc, list_region):
         pyautogui.hotkey('ctrl','shift','=')
         pyautogui.keyDown('r')
         pyautogui.press('enter')
+        pyautogui.press(str(i+2))               # No. 숫자 입력
+        pyautogui.press('enter')
     
-    pyautogui.keyDown('up')
+    for i in range(0,len(list_code)):
+        pyautogui.keyDown('up')
     pyautogui.keyDown('right')
     pyautogui.keyDown('right')              # 코드 위치 도착
     
