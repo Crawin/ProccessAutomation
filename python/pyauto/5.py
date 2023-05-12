@@ -77,7 +77,8 @@ def paste_excel(list_code, list_desc, list_region):
         
         clipboard.copy(list_region[i])
         time.sleep(0.1)
-        pyautogui.hotkey('ctrl','v')
+        if list_region[i] != 'r: x: y:':
+            pyautogui.hotkey('ctrl','v')
         
         pyautogui.keyDown('down')
         pyautogui.keyDown('left')
@@ -156,6 +157,7 @@ def auto():
 wd = tkinter.Tk()
 wd.geometry("200x200")
 wd.resizable(False,False)
+wd.wm_attributes("-topmost", 1)
 
 id_frame = tkinter.Frame()
 id_frame.pack(side= 'top')
