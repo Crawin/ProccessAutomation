@@ -42,10 +42,21 @@ def paste_excel(list_code, list_desc, list_region):
     pyautogui.click(excel_first)
     for i in range(0,int(N.get())):
         pyautogui.keyDown('down')
-    for i in range(0,4):
+    for i in range(0,2):
         pyautogui.keyDown('right')
     if int(N.get()) == 1:
-        pyautogui.keyDown('down')
+        pyautogui.keyDown('down')    
+    pyautogui.keyDown('down')               # 행 추가 위치 선정 완료
+    
+    for i in range(0,len(list_code)-1):       # 코드의 개수만큼 행 추가, 1은 이미 있기에 -1해줌
+        pyautogui.hotkey('ctrl','shift','=')
+        pyautogui.keyDown('r')
+        pyautogui.press('enter')
+    
+    pyautogui.keyDown('up')
+    pyautogui.keyDown('right')
+    pyautogui.keyDown('right')              # 코드 위치 도착
+    
     for i in range(0,len(list_code)):
         clipboard.copy(list_code[i])
         time.sleep(0.1)
