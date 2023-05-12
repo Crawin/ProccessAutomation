@@ -15,6 +15,7 @@ import threading
 excel_first = (2698,456)
 everything = pyautogui.locateOnScreen('everything.png', confidence=0.9)
 excel = pyautogui.locateOnScreen('excel.png', confidence=0.7)
+# excel_first = pyautogui.locateOnScreen('excelfirst.png', confidence=0.7) # 인식이 안됨
 
 def check_input_esc():
     while True:
