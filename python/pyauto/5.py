@@ -35,9 +35,9 @@ def search_everything():
 
 def paste_excel(list_code, list_desc, list_region):
     pyautogui.click(excel)
-    check_input = threading.Thread(target=check_input_esc)
-    check_input.start()
-    check_input.join()
+    # check_input = threading.Thread(target=check_input_esc)
+    # check_input.start()
+    # check_input.join()                                        행 자동 추가로 인한 주석처리
     
     pyautogui.click(excel_first)
     for i in range(0,int(N.get())):
