@@ -47,8 +47,9 @@ def paste_excel(list_code, list_desc, list_region):
         pyautogui.keyDown('down')
     for i in range(0,2):
         pyautogui.keyDown('right')
-    if int(N.get()) == 1:
+    if first_button_bool.get():
         pyautogui.keyDown('down')    
+        first_button_bool.set(False)
     pyautogui.keyDown('down')               # 행 추가 위치 선정 완료
     
     for i in range(0,len(list_code)-1):       # 코드의 개수만큼 행 추가, 1은 이미 있기에 -1해줌
@@ -189,7 +190,13 @@ auto_button.pack(side='top')
 
 goal_id = tkinter.Entry(auto_frame,width=10,state='disabled')
 goal_id.bind("<Return>",run)
-goal_id.pack(side='bottom')
+goal_id.pack(side='top')
+
+first_button_bool = tkinter.BooleanVar()
+first_button = tkinter.Checkbutton(auto_frame,text= '시작행인가?',variable=first_button_bool)
+first_button.pack(side='top')
+
+
 
 wd.mainloop()
 # activate(0)
