@@ -26,6 +26,7 @@ def check_input_esc():
 
 def search_everything():
     id = questid.get()
+    id = id + '*.xml'
     clipboard.copy(id)
     pyautogui.click(everything)
     pyautogui.hotkey('ctrl','f')
