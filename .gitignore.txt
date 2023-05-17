@@ -1,2 +1,3 @@
 python/pyauto/test.py
 *.txt
+python/pyauto/6.py
