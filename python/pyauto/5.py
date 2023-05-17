@@ -118,7 +118,10 @@ def activate():
                             desc[0] = True
             list_code.append(list_line[1])
             list_desc.append(quest_desc)
-            list_region.append('r:' + list_line[5] + ' x:' + list_line[7] + ' y:' + list_line[9])
+            try:
+                list_region.append('r:' + list_line[5] + ' x:' + list_line[7] + ' y:' + list_line[9])
+            except:
+                list_region.append('r:' + ' x:' + ' y:')
     # print(list_region)
     quest.close()
     paste_excel(list_code,list_desc,list_region)
@@ -136,6 +139,7 @@ def run(event):
             activate()
             up()
     pyautogui.moveTo(prev_mouse[0],prev_mouse[1])
+
 
 def up():
     new_questid = str(int(questid.get())+1)
