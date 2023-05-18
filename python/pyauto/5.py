@@ -95,6 +95,7 @@ def paste_excel(list_code, list_desc, list_region, list_obj_name, quest_name):
         
         clipboard.copy(list_region[i])
         if list_region[i] != 'r: x: y:':
+            time.sleep(0.05)
             pyautogui.hotkey('ctrl','v')
         
         pyautogui.keyDown('down')
@@ -105,7 +106,6 @@ def paste_excel(list_code, list_desc, list_region, list_obj_name, quest_name):
 
 def activate():
     search_everything()
-    time.sleep(0.5)
     quest = open(clipboard.paste(), 'r', encoding='UTF-16 LE')
     # quest = open(r"Z:\Mabinogi\dev\release\asset\data\db\GameQuest\G14\295016_Lord_Of_Verona.xml", 'r', encoding='UTF-16 LE')
     lines = quest.readlines()
