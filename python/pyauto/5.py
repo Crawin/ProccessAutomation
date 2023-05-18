@@ -36,7 +36,7 @@ def search_everything():
     time.sleep(1)
     pyautogui.hotkey('shift','alt','c')
 
-def paste_excel(list_code, list_desc, list_region):
+def paste_excel(list_code, list_desc, list_region,list_quest_name):
     pyautogui.click(excel)
     # check_input = threading.Thread(target=check_input_esc)
     # check_input.start()
@@ -61,32 +61,37 @@ def paste_excel(list_code, list_desc, list_region):
     
     for i in range(0,len(list_code)):
         pyautogui.keyDown('up')
-    pyautogui.keyDown('right')
-    pyautogui.keyDown('right')              # 코드 위치 도착
+    pyautogui.keyDown('right')              # Name 위치 도착
     
-    for i in range(0,len(list_code)):
-        clipboard.copy(list_code[i])
-        time.sleep(0.1)
+    for i in range(0, len(list_code)):
+        clipboard.copy(list_quest_name[i])
+        time.sleep(0.05)
         pyautogui.hotkey('ctrl','v')
-        pyautogui.keyDown('right')
+        pyautogui.keyDown('right')          # code 위치 도착
+
+        
+        clipboard.copy(list_code[i])
+        time.sleep(0.05)
+        pyautogui.hotkey('ctrl','v')
+        pyautogui.keyDown('right')          # desc 위치 도착
+
         
         clipboard.copy(list_desc[i])
-        time.sleep(0.1)
+        time.sleep(0.05)
         pyautogui.hotkey('ctrl','v')
         pyautogui.keyDown('right')
         pyautogui.keyDown('right')
-        pyautogui.keyDown('right')
+        pyautogui.keyDown('right')          # region 위치 도착
+
         
         clipboard.copy(list_region[i])
-        time.sleep(0.1)
         if list_region[i] != 'r: x: y:':
             pyautogui.hotkey('ctrl','v')
         
         pyautogui.keyDown('down')
-        pyautogui.keyDown('left')
-        pyautogui.keyDown('left')
-        pyautogui.keyDown('left')
-        pyautogui.keyDown('left')      
+        for k in range(0,5):
+            pyautogui.keyDown('left')       # Name 위치 복귀
+            
     pyautogui.hotkey('ctrl','s')
 
 def activate():
@@ -122,9 +127,20 @@ def activate():
                 list_region.append('r:' + list_line[5] + ' x:' + list_line[7] + ' y:' + list_line[9])
             except:
                 list_region.append('r:' + ' x:' + ' y:')
-    # print(list_region)
+    # list_code, list_desc, list_region이 모두 알아진 상황에서 quest.xml 파일에 list_code 를 검색하여 list_quest_name을 만들어 두면 되겠다
+    list_quest_name = []
+    for desc in list_desc:
+        start_point = quest_db_str.find(desc)
+        sentence = ''
+        while quest_db_str[start_point] != '\n':        # 찾은 시작 지점부터 엔터가 나오기 전까지의 한 문장을 갖고오자
+            sentence = sentence + quest_db_str[start_point]
+            start_point += 1
+        # 이제 한 문장에서 불필요한 코드번호와 \t를 없애자
+        sentence = sentence.replace(desc,'').replace('\t','')
+        list_quest_name.append(sentence)
+    
     quest.close()
-    paste_excel(list_code,list_desc,list_region)
+    paste_excel(list_code,list_desc,list_region,list_quest_name)
     new_N = str(int(N.get())+1)
     N.delete(0,'end')
     N.insert(0, new_N)
@@ -151,22 +167,20 @@ def auto():
         goal_id.config(state='normal')
     else:
         goal_id.config(state='disabled')
+        
+def stop(event):
+    quest_db.close()
+    wd.destroy()
+    
+quest_db = open(r'Z:\Mabinogi\dev\release\asset\data\local\xml\quest.korea.txt', 'r', encoding='UTF-16 LE')
+quest_db_str = quest_db.read()
 
-# def exit_window():
-#     while True:
-#         if keyboard.is_pressed("esc"):
-#             wd.quit()
-#             break
-
-# pyautogui.mouseInfo()
-# check_esc = threading.Thread(target=exit_window)
-
-# check_esc.start()
 
 wd = tkinter.Tk()
 wd.geometry("200x200")
 wd.resizable(False,False)
 wd.wm_attributes("-topmost", 1)
+wd.bind("<Escape>",stop)
 
 id_frame = tkinter.Frame()
 id_frame.pack(side= 'top')
@@ -176,6 +190,7 @@ questid_label.pack(side='top')
 questid = tkinter.Entry(id_frame,width=10)
 questid.bind("<Return>",run)
 questid.pack(side='left')
+
 up_button = tkinter.Button(id_frame,text= "증가",command=up)
 up_button.pack(side='right')
 
@@ -198,9 +213,7 @@ goal_id.pack(side='top')
 
 first_button_bool = tkinter.BooleanVar()
 first_button = tkinter.Checkbutton(auto_frame,text= '시작행인가?',variable=first_button_bool)
+first_button.bind("<Return>",run)
 first_button.pack(side='top')
 
-
-
 wd.mainloop()
-# activate(0)
