@@ -36,7 +36,7 @@ def search_everything():
     time.sleep(1)
     pyautogui.hotkey('shift','alt','c')
 
-def paste_excel(list_code, list_desc, list_region,list_quest_name):
+def paste_excel(list_code, list_desc, list_region, list_obj_name, quest_name):
     pyautogui.click(excel)
     # check_input = threading.Thread(target=check_input_esc)
     # check_input.start()
@@ -45,12 +45,21 @@ def paste_excel(list_code, list_desc, list_region,list_quest_name):
     pyautogui.click(excel_first)
     for i in range(0,int(N.get())):
         pyautogui.keyDown('down')
-    for i in range(0,2):
-        pyautogui.keyDown('right')
-    if first_button_bool.get():
-        pyautogui.keyDown('down')    
-        first_button_bool.set(False)
-    pyautogui.keyDown('down')               # 행 추가 위치 선정 완료
+    # for i in range(0,2):
+    #     pyautogui.keyDown('right')
+    pyautogui.keyDown('right')              # 퀘스트 전체 이름 도착
+    clipboard.copy(quest_name)
+    time.sleep(0.05)
+    pyautogui.keyDown('f2')
+    pyautogui.hotkey('ctrl','v')
+    pyautogui.keyDown('enter')
+    pyautogui.keyDown('right')
+    
+    # if first_button_bool.get():
+    #     pyautogui.keyDown('down')    
+    #     first_button_bool.set(False)
+    # pyautogui.keyDown('down')               # 행 추가 위치 선정 완료
+    pyautogui.keyDown('up')                   # 행 추가 위치 선정 완료, 퀘스트 전체 이름 작성으로 인해 위로 한칸만 올려도 행 추가 위치 도착
     
     for i in range(0,len(list_code)-1):       # 코드의 개수만큼 행 추가, 1은 이미 있기에 -1해줌
         pyautogui.hotkey('ctrl','shift','=')
@@ -64,7 +73,7 @@ def paste_excel(list_code, list_desc, list_region,list_quest_name):
     pyautogui.keyDown('right')              # Name 위치 도착
     
     for i in range(0, len(list_code)):
-        clipboard.copy(list_quest_name[i])
+        clipboard.copy(list_obj_name[i])
         time.sleep(0.05)
         pyautogui.hotkey('ctrl','v')
         pyautogui.keyDown('right')          # code 위치 도착
@@ -103,7 +112,30 @@ def activate():
     list_code = []
     list_desc = []
     list_region = []
+    quest_name = ''
     for line in lines:
+        if "<header name=" in line:
+            list_line = line.split('"')
+            desc = [False, False]
+            quest_num = ''
+            for alpha in list_line[1]:          # 퀘스트 이름에 해당하는 로컬값 알아내기
+                if desc[1]:
+                    if alpha == ']':
+                        break
+                    else:
+                        quest_num += alpha
+                else:
+                    if desc[0]:
+                        if alpha == '.':
+                            desc[1] = True
+                    else:
+                        if alpha == '.':
+                            desc[0] = True
+            start_point = quest_db_str.find(quest_num)
+            while quest_db_str[start_point] != '\n':        # 찾은 시작 지점부터 엔터가 나오기 전까지의 한 문장을 갖고오자
+                quest_name = quest_name + quest_db_str[start_point]
+                start_point += 1
+            quest_name = quest_name.replace(quest_num,'').replace('\t','')
         if "<objective code=" in line:
             list_line = line.split('"')
             desc = [False, False]
@@ -127,8 +159,8 @@ def activate():
                 list_region.append('r:' + list_line[5] + ' x:' + list_line[7] + ' y:' + list_line[9])
             except:
                 list_region.append('r:' + ' x:' + ' y:')
-    # list_code, list_desc, list_region이 모두 알아진 상황에서 quest.xml 파일에 list_code 를 검색하여 list_quest_name을 만들어 두면 되겠다
-    list_quest_name = []
+    # list_code, list_desc, list_region이 모두 알아진 상황에서 quest.xml 파일에 list_code 를 검색하여 list_obj_name을 만들어 두면 되겠다
+    list_obj_name = []
     for desc in list_desc:
         start_point = quest_db_str.find(desc)
         sentence = ''
@@ -137,10 +169,10 @@ def activate():
             start_point += 1
         # 이제 한 문장에서 불필요한 코드번호와 \t를 없애자
         sentence = sentence.replace(desc,'').replace('\t','')
-        list_quest_name.append(sentence)
+        list_obj_name.append(sentence)
     
     quest.close()
-    paste_excel(list_code,list_desc,list_region,list_quest_name)
+    paste_excel(list_code,list_desc,list_region,list_obj_name,quest_name)
     new_N = str(int(N.get())+1)
     N.delete(0,'end')
     N.insert(0, new_N)
@@ -211,9 +243,10 @@ goal_id = tkinter.Entry(auto_frame,width=10,state='disabled')
 goal_id.bind("<Return>",run)
 goal_id.pack(side='top')
 
-first_button_bool = tkinter.BooleanVar()
-first_button = tkinter.Checkbutton(auto_frame,text= '시작행인가?',variable=first_button_bool)
-first_button.bind("<Return>",run)
-first_button.pack(side='top')
+# first_button_bool = tkinter.BooleanVar()
+# first_button = tkinter.Checkbutton(auto_frame,text= '시작행인가?',variable=first_button_bool)
+# first_button.bind("<Return>",run)
+# first_button.pack(side='top')
+# 퀘스트 전체 이름 작성하는 작업으로 인해 필요없어짐
 
 wd.mainloop()
