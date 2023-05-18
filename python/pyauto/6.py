@@ -1,5 +1,6 @@
 from clipboard import copy
-original =''''''
+original ='''
+'''
   
 original = original.strip()
 original = original.split('\n')
