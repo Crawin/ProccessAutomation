@@ -180,9 +180,9 @@ def activate():
 def run(event):
     global run_state
     run_state = True
-    th = threading.Thread(target=check_exit)
-    th.daemon = True
-    th.start()
+    # th = threading.Thread(target=check_exit)
+    # th.daemon = True
+    # th.start()
     prev_mouse = pyautogui.position()
     prev_mouse = [prev_mouse.x, prev_mouse.y]
     if goal_id['state'] == 'disabled':
