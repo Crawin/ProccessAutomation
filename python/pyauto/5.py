@@ -178,15 +178,21 @@ def activate():
     N.insert(0, new_N)
         
 def run(event):
+    global run_state
+    run_state = True
+    th = threading.Thread(target=check_exit)
+    th.daemon = True
+    th.start()
     prev_mouse = pyautogui.position()
     prev_mouse = [prev_mouse.x, prev_mouse.y]
     if goal_id['state'] == 'disabled':
         activate()
     else:
-        while int(goal_id.get()) >= int(questid.get()):
+        while int(goal_id.get()) >= int(questid.get()) and run_state:
             activate()
             up()
     pyautogui.moveTo(prev_mouse[0],prev_mouse[1])
+    run_state = False
 
 
 def up():
@@ -203,10 +209,16 @@ def auto():
 def stop(event):
     quest_db.close()
     wd.destroy()
-    
+
+def check_exit():
+    global run_state
+    while run_state:
+        if keyboard.is_pressed('esc'):
+            run_state = False
+
 quest_db = open(r'Z:\Mabinogi\dev\release\asset\data\local\xml\quest.korea.txt', 'r', encoding='UTF-16 LE')
 quest_db_str = quest_db.read()
-
+run_state = False
 
 wd = tkinter.Tk()
 wd.geometry("200x200")
@@ -231,7 +243,6 @@ questid_label.pack()
 N = tkinter.Entry(wd,width=10)
 N.bind("<Return>",run)
 N.pack()
-
 
 auto_frame = tkinter.Frame()
 auto_frame.pack(side= 'top')
