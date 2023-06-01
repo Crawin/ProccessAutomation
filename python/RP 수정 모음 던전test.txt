@@ -1,0 +1,72 @@
+0.	G1	19	AddCondition(168, 60 * 60 * 1000, `SPD:f:1.4`)	data\script\Dungeon\G1RP_05_TirCho_Alby_Dungeon_gfMainStream2012Part1.mint
+1.	G1	42	AddCondition(168, 60 * 60 * 1000, `SPD:f:1.4`)	data\script\Dungeon\G1RP_15_Dunbarton_Rabbie_Dungeon_gfMainStream2012Part1.mint
+2.	G1	62	AddCondition(168, 60 * 60 * 1000, `SPD:f:1.4`)	data\script\Dungeon\G1RP_18_Dunbarton_Math_Dungeon_Re2020.mint
+3.	G1	94	AddCondition(168, 60 * 60 * 1000, `SPD:f:1.4`)	data\script\Dungeon\G1RP_25_Dunbarton_Rabbie_Dungeon_gfMainStream2012Part1.mint
+4.	G1	100	AddCondition(168, 60 * 60 * 1000, `SPD:f:1.4`)	data\script\Dungeon\G1RP_31_Dunbarton_Math_Dungeon_Re2020.mint
+5.	G2	45	컨디션으로 부여되지 않고, 이동 속도 증가 포션으로 지급되고 있습니다.	data\script\Dungeon\G2RP_28_TirCho_Ciar_Dungeon_giant_gfMainStream2012Part1.mint
+6.	G7	16	컨디션이나 아이템으로 이동속도 증가 효과가 주어지지 않습니다.	data\script\Dungeon\G7RP_ruway_longa_desert_dungeon.mint
+7.	G7	26	컨디션이나 아이템으로 이동속도 증가 효과가 주어지지 않습니다.	data\script\Dungeon\longa_desert_dungeon_RP_Atrata.mint
+8.	G8	31	컨디션이나 아이템으로 이동속도 증가 효과가 주어지지 않습니다.	data\script\Dungeon\longa_desert_dungeon_RP_Effie_Brother.mint
+9.	G9	18	컨디션이나 아이템으로 이동속도 증가 효과가 주어지지 않습니다.	data\script\dungeon2\790001_Fallon_RP.mint
+10.	G9	24	컨디션이나 아이템으로 이동속도 증가 효과가 주어지지 않습니다.	data\script\dungeon2\790002_SealOfAlchemist.mint
+11	G9	56	컨디션이나 아이템으로 이동속도 증가 효과가 주어지지 않습니다.	data\script\Dungeon\Emain_Coill_Dungeon_G9_ElathaRP_renewal.mint
+12.	G9	103	컨디션이 아닌 이동속도 40% 증가 포션이 4개 지급됩니다.	data\script\Dungeon\Dunbarton_Rabbie_Andras_Dungeon.mint
+13	G10	14	컨디션이나 아이템으로 이동속도 증가 효과가 주어지지 않습니다.	data\script\dungeon2\791002_LeymoreAndElatha.mint
+14.	G10	46	컨디션이나 아이템으로 이동속도 증가 효과가 주어지지 않습니다.	data\script\Dungeon\TirCho_Ciar_Dungeon_Elatha_RP_renewal.mint
+15.	G10	58	컨디션이나 아이템으로 이동속도 증가 효과가 주어지지 않습니다.	data\script\Dungeon\maizplain_dungeon_Arneng_RP.mint
+16.	G10	60	컨디션이 아닌 이동속도 40% 증가 포션이 3개 지급됩니다.	data\script\Dungeon\maizplain_dungeon_Voight_RP.mint
+17.	G11	33	컨디션이나 아이템으로 이동속도 증가 효과가 주어지지 않습니다.	data\script\dungeon2\792005_Jenna_Neamhein.mint
+18.	G12	59	컨디션이나 아이템으로 이동속도 증가 효과가 주어지지 않습니다.	data\script\dungeon2\793011_Morrighan_RP.mint
+19.	G13	73	컨디션이나 아이템으로 이동속도 증가 효과가 주어지지 않습니다.	data\script\dungeon2\794011_HamletRP_PirateShip.mint
+20.	G14	32	컨디션이나 아이템으로 이동속도 증가 효과가 주어지지 않습니다.	data\script\dungeon2\795003_Infiltration.mint
+21.	G14	41	컨디션이나 아이템으로 이동속도 증가 효과가 주어지지 않습니다.	data\script\dungeon2\795006_Tragedy.mint
+22.	G14	47	컨디션이나 아이템으로 이동속도 증가 효과가 주어지지 않습니다.	data\script\dungeon2\795008_TalkToFather.mint
+23.	G14	56	컨디션이나 아이템으로 이동속도 증가 효과가 주어지지 않습니다.	data\script\dungeon2\795011_Poison.mint
+24.	G14	59	컨디션이나 아이템으로 이동속도 증가 효과가 주어지지 않습니다.	data\script\dungeon2\795012_RomeoAndJuliet.mint
+25.	G15	12	컨디션이나 아이템으로 이동속도 증가 효과가 주어지지 않습니다.	data\script\dungeon2\796001_First_Milletian.mint
+26	G15	20	컨디션이나 아이템으로 이동속도 증가 효과가 주어지지 않습니다.	data\script\dungeon2\796002_Friendship_In_The_Ocean.mint
+27	G15	28	컨디션이나 아이템으로 이동속도 증가 효과가 주어지지 않습니다.	data\script\Dungeon\longa_desert_dungeon_RP_Portia_renewal.mint
+28	G15	28	컨디션이나 아이템으로 이동속도 증가 효과가 주어지지 않습니다.	data\script\Dungeon\longa_desert_dungeon_RP_Portia.mint
+29.	G15	35	컨디션이나 아이템으로 이동속도 증가 효과가 주어지지 않습니다.	data\script\Dungeon\TirCho_Alby_G15_Price_Of_Love_Mid_renewal.mint
+30	G15	38	컨디션이나 아이템으로 이동속도 증가 효과가 주어지지 않습니다.	data\script\dungeon2\796003_Shakespeare_Rises.mint
+31	G15	65	컨디션이나 아이템으로 이동속도 증가 효과가 주어지지 않습니다.	data\script\dungeon2\796004_Sealed_Avon.mint
+32	G15	77	컨디션이나 아이템으로 이동속도 증가 효과가 주어지지 않습니다.	data\script\dungeon2\796006_Shakespeare_in_Mag_Tuireadh.mint
+33.	G16	15	컨디션이나 아이템으로 이동속도 증가 효과가 주어지지 않습니다.	data\script\dungeon2\797101_Death_of_morrighan.mint
+34	G16	28	컨디션이나 아이템으로 이동속도 증가 효과가 주어지지 않습니다.	data\script\dungeon2\797102_Doubtful_contact.mint
+35.	G16	36	컨디션이나 아이템으로 이동속도 증가 효과가 주어지지 않습니다.	data\script\dungeon2\797103_Facing_the_truth.mint
+36.	G16	42	컨디션이나 아이템으로 이동속도 증가 효과가 주어지지 않습니다.	data\script\dungeon2\797104_Necessarily.mint
+37.	G16	50	컨디션이나 아이템으로 이동속도 증가 효과가 주어지지 않습니다.	data\script\dungeon2\797105_Helm_of_truth.mint
+38	G16	64	컨디션이나 아이템으로 이동속도 증가 효과가 주어지지 않습니다.	data\script\dungeon2\797006_Last_syllable_of_recorded_time.mint
+39.	G17	27	컨디션이나 아이템으로 이동속도 증가 효과가 주어지지 않습니다.	data\script\dungeon2\731004_GiantLionRP.mint
+40.	G17	49	컨디션이나 아이템으로 이동속도 증가 효과가 주어지지 않습니다.	data\script\dungeon2\731008_Prediction.mint
+41.	G17	71	컨디션이나 아이템으로 이동속도 증가 효과가 주어지지 않습니다.	data\script\dungeon2\798001_EvilSpirit.mint
+42	G17	99	컨디션이나 아이템으로 이동속도 증가 효과가 주어지지 않습니다.	data\script\dungeon2\798005_TheCarelesslyThrownStone.mint
+43.	G17	119	컨디션이나 아이템으로 이동속도 증가 효과가 주어지지 않습니다.	data\script\dungeon2\798102_DarknessAgain.mint
+44.	G17	160	컨디션이나 아이템으로 이동속도 증가 효과가 주어지지 않습니다.	data\script\dungeon2\798301_MeaninglessDuel.mint
+45	G17	169	컨디션이나 아이템으로 이동속도 증가 효과가 주어지지 않습니다.	data\script\dungeon2\798303_TestOfShaman.mint
+46.	G17	209	컨디션이나 아이템으로 이동속도 증가 효과가 주어지지 않습니다.	data\script\dungeon2\798404_SpinControl.mint
+47.	G17	214	컨디션이나 아이템으로 이동속도 증가 효과가 주어지지 않습니다.	data\script\dungeon2\798405_AttackOfDragon.mint
+48.	G17	224	컨디션이나 아이템으로 이동속도 증가 효과가 주어지지 않습니다.	data\script\dungeon2\798502_DragonNightRuairiRP.mint
+49.	G17	229	컨디션이 아닌 이동속도 40% 증가 포션이 1개 지급됩니다.	data\script\dungeon2\798503_ActivatedTrap.mint
+50.	G17	234	컨디션이나 아이템으로 이동속도 증가 효과가 주어지지 않습니다.	data\script\dungeon2\798504_MilliaInDanger.mint
+51.	G17	239	컨디션이나 아이템으로 이동속도 증가 효과가 주어지지 않습니다.	data\script\dungeon2\798601_SaveTheRuairi.mint
+52.	G17	250	컨디션이 아닌 이동속도 40% 증가 포션이 1개 지급됩니다.	data\script\dungeon2\798604_KillingKrug.mint
+53	G17	275	컨디션이 아닌 이동속도 40% 증가 포션이 1개 지급됩니다.	data\script\dungeon2\798703_HopeAndDespair.mint
+54	G17	276	컨디션이 아닌 이동속도 40% 증가 포션이 1개 지급됩니다.	data\script\dungeon2\798704_ReleaseTheSeal.mint
+55.	G17	279	컨디션이나 아이템으로 이동속도 증가 효과가 주어지지 않습니다.	data\script\dungeon2\798705_RatInVolcano.mint
+56.	G17	283	컨디션이나 아이템으로 이동속도 증가 효과가 주어지지 않습니다.	data\script\dungeon2\798800_ReopardInVolcano.mint
+57.	G17	288	컨디션이 아닌 이동속도 40% 증가 포션이 1개 지급됩니다.	data\script\dungeon2\798801_GuardTheCartRP.mint
+58.	G17	290	컨디션이 아닌 이동속도 40% 증가 포션이 1개 지급됩니다.	data\script\dungeon2\798802_GuardTheFortress.mint
+59.	G17	292	컨디션이 아닌 이동속도 40% 증가 포션이 1개 지급됩니다.	data\script\dungeon2\798803_AttackManatunnel.mint
+60	G18	31	컨디션이나 아이템으로 이동속도 증가 효과가 주어지지 않습니다.	data\script\dungeon2\799102_DramaS2_Zero_Story.mint
+61	G18	74	컨디션이나 아이템으로 이동속도 증가 효과가 주어지지 않습니다.	data\script\dungeon2\799107_DramaS2_Tarlach_Nightmare.mint
+62	G18	104	컨디션이나 아이템으로 이동속도 증가 효과가 주어지지 않습니다.	data\script\dungeon2\799304_DramaS2_Make_The_Cure.mint
+63	G18	117	컨디션이 아닌 이동속도 60% 증가 포션이 1개 지급됩니다.	data\script\dungeon2\799402_DramaS2_Disguising.mint
+64	G18	123	컨디션이 아닌 이동속도 60% 증가 포션이 1개 지급됩니다.	data\script\dungeon2\799405_DramaS2_Puzzle_In_Metus.mint
+65	G18	130	컨디션이 아닌 이동속도 30% 증가 포션이 10개 지급됩니다.	data\script\dungeon2\799501_DramaS2_Cessair_Training.mint
+66	G18	131	컨디션이나 아이템으로 이동속도 증가 효과가 주어지지 않습니다.	data\script\dungeon2\799502_DramaS2_Escaping_The_Lobby.mint
+67	G18	133	컨디션이 아닌 이동속도 40% 증가 포션이 1개 지급됩니다.	data\script\dungeon2\799503_DramaS2_The_Heart_of_Cessair.mint
+68	G18	134	컨디션이나 아이템으로 이동속도 증가 효과가 주어지지 않습니다.	data\script\dungeon2\799504_DramaS2_Revealed_Secret.mint
+69	G18	138	컨디션이나 아이템으로 이동속도 증가 효과가 주어지지 않습니다.	data\script\dungeon2\799505_DramaS2_Dian_Cecht_Battle_1.mint
+70	G18	143	컨디션이나 아이템으로 이동속도 증가 효과가 주어지지 않습니다.	data\script\dungeon2\799601_DramaS2_Tarlach_Knows.mint
+71	G18	145	컨디션이나 아이템으로 이동속도 증가 효과가 주어지지 않습니다.	data\script\dungeon2\799603_DramaS2_Loop_Run.mint

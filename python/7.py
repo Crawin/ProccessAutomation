@@ -27,11 +27,11 @@ for sheet in sheets:
                             addresses = addresses.split('\n')
                             for address in addresses:
                                 if "data\script\dungeon" in address.lower():
-                                    result.write(f"{num}.  {sheet} - {i+2}:\t{excel[sheet]['Unnamed: 20'][i]}\t{address}\n")
+                                    result.write(f"{num}\t{sheet}\t{i+2}\t{excel[sheet]['Unnamed: 20'][i]}\t{address}\n")
                                     # print(f"{num}. {sheet} - {i+2}:\t{excel[sheet]['Unnamed: 2'][i]}\t{excel[sheet]['Unnamed: 20'][i]}\t{address}\n")
                                     num += 1
                         else:
-                            result.write(f"{num}. {sheet} - {i+2}:\t{excel[sheet]['Unnamed: 20'][i]}\t{excel[sheet]['Unnamed: 12'][i]}\n")
+                            result.write(f"{num}.\t{sheet}\t{i+2}\t{excel[sheet]['Unnamed: 20'][i]}\t{excel[sheet]['Unnamed: 12'][i]}\n")
                             # print(f"{num}. {sheet} - {i+2}:\t{excel[sheet]['Unnamed: 2'][i]}\t{excel[sheet]['Unnamed: 20'][i]}\t{excel[sheet]['Unnamed: 12'][i]}\n")
                             num += 1
                         
